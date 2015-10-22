@@ -141,6 +141,8 @@ angular.module('starter.controllers', [])
   * Draw google map marker for current location
   */
   $scope.setCurrentLocationMarker = function(location) {
+    console.log('------------ setCurrentLocationMarker');
+
     var plugin = BackgroundGeolocationService.getPlugin();
     if (plugin) {
       // Update odometer
@@ -150,6 +152,7 @@ angular.module('starter.controllers', [])
         });
       });
     }
+
     // Set currentLocation @property
     $scope.currentLocation = location;
     
@@ -170,6 +173,7 @@ angular.module('starter.controllers', [])
           strokeWeight: 6
         }
       });
+      /*
       $scope.locationAccuracyMarker = new google.maps.Circle({
         zIndex: 9,
         fillColor: '#3366cc',
@@ -177,11 +181,13 @@ angular.module('starter.controllers', [])
         strokeOpacity: 0,
         map: $scope.map
       });
+      */
     }
     if (!$scope.bgGeo.enabled) {
       return;
     }
     if (!$scope.path) {
+      /*
       $scope.path = new google.maps.Polyline({
         zIndex: 1,
         map: $scope.map,
@@ -190,6 +196,7 @@ angular.module('starter.controllers', [])
         strokeOpacity: 0.7,
         strokeWeight: 5
       });
+      */
     }
     var latlng = new google.maps.LatLng(coords.latitude, coords.longitude);
     
@@ -214,12 +221,12 @@ angular.module('starter.controllers', [])
 
     // Update our current position marker and accuracy bubble.
     $scope.currentLocationMarker.setPosition(latlng);
-    $scope.locationAccuracyMarker.setCenter(latlng);
-    $scope.locationAccuracyMarker.setRadius(location.coords.accuracy);
+    //$scope.locationAccuracyMarker.setCenter(latlng);
+    //$scope.locationAccuracyMarker.setRadius(location.coords.accuracy);
 
     // Add breadcrumb to current Polyline path.
-    $scope.path.getPath().push(latlng);
-    $scope.previousLocation = location;
+    //$scope.path.getPath().push(latlng);
+    //$scope.previousLocation = location;
   };
 
   /**
