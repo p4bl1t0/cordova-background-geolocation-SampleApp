@@ -12,6 +12,8 @@
   <preference name="cordova-background-geolocation-license" value="4bbb513c013111eae951647fd4f9e79f127fce6f7a00e9d327db9ea2a053a0df" />
 
   <plugin name="cordova-plugin-whitelist" spec="1" />
+  
+    <plugin name="cordova-background-geolocation-lt" source="npm" />
   <access origin="*"/>
   <allow-navigation href="*" />
   <allow-intent href="*" />
